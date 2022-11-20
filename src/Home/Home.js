@@ -10,29 +10,13 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Button from '@mui/material/Button';
-import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import MuiAppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import proImage from "../Assets/Images/profile.JPG"
 import TextField from '@mui/material/TextField';
 import IosShareOutlinedIcon from '@mui/icons-material/IosShareOutlined';
-import Toolbar from '@mui/material/Toolbar';
-import CssBaseline from '@mui/material/CssBaseline';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
 
 
 
@@ -40,7 +24,6 @@ const drawerWidth = 500;
 
 
 const Home = () => {
-    // const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     
     const handleDrawerOpen = () => {
@@ -62,7 +45,6 @@ const Home = () => {
                 </div>
             </div>
             <div className='side_bar_lists'>
-                {/* <ul className='side_bar_lists'> */}
                     <li className='side_bar_list1' >Concord</li>
                     <li className='side_bar_list'>San diego</li>
                     <li className='side_bar_list'>Fresno</li>
@@ -108,15 +90,11 @@ const Home = () => {
         open={open}
       >
         <div className='drawer_header'>
-        {/* <DrawerHeader> */}
         <h3>Add Employee Details</h3>
-          <IconButton onClick={handleDrawerClose}>
-            {/* {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <CloseIcon />} */}
-            
+          <IconButton onClick={handleDrawerClose}>           
             <CloseIcon />
           </IconButton>
           </div>
-        {/* </DrawerHeader> */}
        <div className='drawer'>
         <img src={proImage} className='drawer_img'/>
         <div className='text_fields'>
@@ -126,7 +104,6 @@ const Home = () => {
         <TextField className='text_field' id="outlined-basic" label="Email" variant="outlined" />
         <TextField className='text_field' id="outlined-basic" label="Mobile Number" variant="outlined" />
         </div>
-        {/* <Avatar className='avatar' /> */}
        </div>
        <div className='drawer_bottom'>
        <h3 className='text'>ID proof</h3>
@@ -155,6 +132,7 @@ const Home = () => {
        </div>
       </Drawer>
     </div>
+    {open && <div className='OverLay'></div>}
     </Box>
 
   )
